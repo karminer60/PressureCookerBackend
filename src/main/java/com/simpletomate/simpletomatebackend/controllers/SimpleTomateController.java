@@ -1,8 +1,8 @@
 package com.simpletomate.simpletomatebackend.controllers;
 import java.util.*;
 
-import com.lambdaschool.piggybank.models.Coin;
-import com.lambdaschool.piggybank.repositories.CoinRepository;
+import com.simpletomate.simpletomatebackend.models.Recipe;
+import com.simpletomate.simpletomatebackend.repositories.SimpleTomateBackendApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
