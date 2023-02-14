@@ -13,19 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class SimpleTomateController {
 
     @Autowired
-    CoinRepository coinrepos;
+    SimpleTomateBackendApplication coinrepos;
     // http://localhost:2019/total
 
     @GetMapping(value = "/total",
             produces = {"application/json"})
     public ResponseEntity<?>listAllCoins()
     {
-        List<Coin> myList = new ArrayList<>();
-        coinrepos.findAll().iterator().forEachRemaining(myList::add);
+        List<Recipe> myList = new ArrayList<>();
+//        coinrepos.findAll().iterator().forEachRemaining(myList::add);
 
         myList.sort((c1,c2)-> c1.getName().compareToIgnoreCase(c2.getName()));
         double total = 0;
-        for( Coin item: myList){
+        for( Recipe item: myList){
 
             System.out.println( item.getQuantity() +" " + item.getNamepural());
             total += item.getValue()*item.getQuantity();

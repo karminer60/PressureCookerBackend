@@ -1,14 +1,16 @@
 package com.simpletomate.simpletomatebackend.models;
+import jakarta.persistence.*;
+
 import java.util.*;
-import javax.persistence.*;
+//import javax.persistence.*;
 
 @Entity
-@Table(name = "coins")
+@Table(name = "recipes")
 public class Recipe {
 
     @Id
     @GeneratedValue(strategy  = GenerationType.AUTO)
-    Long coinid;
+    Long recipeid;
     String name;
     String namepural;
     double value;
@@ -25,12 +27,12 @@ public class Recipe {
         //default constructor
     }
 
-    public long getCoinid() {
-        return coinid;
+    public long getRecipeid() {
+        return recipeid;
     }
 
-    public void setCoinid(long coinid) {
-        this.coinid = coinid;
+    public void setRecipeid(long coinid) {
+        this.recipeid = coinid;
     }
 
     public String getName() {
@@ -68,7 +70,7 @@ public class Recipe {
     @Override
     public String toString() {
         return "Coin{" +
-                "coinid=" + coinid +
+                "coinid=" + recipeid +
                 ", name=" + name +
                 ", namepural=" + namepural +
                 ", value=" + value +
