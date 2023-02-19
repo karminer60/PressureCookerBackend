@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SimpleTomateController {
 
     @Autowired
-    SimpleTomateBackendApplication coinrepos;
+    SimpleTomateBackendApplication reciperepos;
     // http://localhost:2019/total
 
     @GetMapping(value = "/total",
@@ -21,7 +21,7 @@ public class SimpleTomateController {
     public ResponseEntity<?>listAllCoins()
     {
         List<Recipe> myList = new ArrayList<>();
-//        coinrepos.findAll().iterator().forEachRemaining(myList::add);
+//        reciperepos.findAll().iterator().forEachRemaining(myList::add);
 
         myList.sort((c1,c2)-> c1.getName().compareToIgnoreCase(c2.getName()));
         double total = 0;

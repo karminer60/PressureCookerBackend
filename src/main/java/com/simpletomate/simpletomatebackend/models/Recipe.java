@@ -69,8 +69,8 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return "Coin{" +
-                "coinid=" + recipeid +
+        return "Recipe{" +
+                "recipeid=" + recipeid +
                 ", name=" + name +
                 ", namepural=" + namepural +
                 ", value=" + value +
