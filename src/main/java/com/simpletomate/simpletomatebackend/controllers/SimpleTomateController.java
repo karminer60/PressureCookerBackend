@@ -16,9 +16,9 @@ public class SimpleTomateController {
     SimpleTomateBackendApplication reciperepos;
     // http://localhost:2019/total
 
-    @GetMapping(value = "/total",
+    @GetMapping(value = "/recipes",
             produces = {"application/json"})
-    public ResponseEntity<?>listAllCoins()
+    public ResponseEntity<?>listAllRecipes()
     {
         List<Recipe> myList = new ArrayList<>();
 //        reciperepos.findAll().iterator().forEachRemaining(myList::add);
