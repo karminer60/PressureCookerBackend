@@ -17,7 +17,7 @@ public class SimpleTomateController {
     SimpleTomateBackendApplication reciperepos;
     // http://localhost:2019/total
 
-    @GetMapping(value = "/recipes",
+    @GetMapping(value = "/allrecipes",
             produces = {"application/json"})
     public ResponseEntity<?>listAllRecipes()
     {
