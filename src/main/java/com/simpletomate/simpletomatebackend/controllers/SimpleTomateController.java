@@ -17,24 +17,13 @@ public class SimpleTomateController {
     SimpleTomateBackendApplication reciperepos;
     // http://localhost:2019/total
 
-    @GetMapping(value = "/allrecipes",
-            produces = {"application/json"})
-    public ResponseEntity<?>listAllRecipes()
-    {
-        List<Recipe> myList = new ArrayList<>();
-//        reciperepos.findAll().iterator().forEachRemaining(myList::add);
+    @RestController
+    public class HelloWorldController {
 
-        myList.sort((c1,c2)-> c1.getName().compareToIgnoreCase(c2.getName()));
-        double total = 0;
-        for( Recipe item: myList){
-
-            System.out.println( item.getQuantity() +" " + item.getNamepural());
-            total += item.getValue()*item.getQuantity();
-
+        @GetMapping("/sayhello")
+        public String sayHelloWorld(){
+            return "Hello World!";
         }
-
-        System.out.println( "The piggy bank holds" + " " + total);
-        return new ResponseEntity<>(myList, HttpStatus.OK);
 
     }
 }
