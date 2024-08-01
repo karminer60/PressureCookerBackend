@@ -26,9 +26,9 @@ public class RecipeService {
     }
 
     public Recipe getRecipeById(Integer id){
-        Optional<Recipe> optionalEmployee = recipeRepo.findById(id);
-        if(optionalEmployee.isPresent()){
-            return optionalEmployee.get();
+        Optional<Recipe> optionalRecipe = recipeRepo.findById(id);
+        if(optionalRecipe.isPresent()){
+            return optionalRecipe.get();
         }
         log.info("Employee with id: {} doesn't exist", id);
         return null;
@@ -37,10 +37,10 @@ public class RecipeService {
     public Recipe saveRecipe (Recipe recipe){
         recipe.setCreatedAt(LocalDateTime.now());
         recipe.setUpdatedAt(LocalDateTime.now());
-        Recipe savedEmployee = recipeRepo.save(recipe);
+        Recipe savedRecipe = recipeRepo.save(recipe);
 
         log.info("Employee with id: {} saved successfully", recipe.getId());
-        return savedEmployee;
+        return savedRecipe;
     }
 
     public Recipe updateRecipe (Recipe recipe) {
