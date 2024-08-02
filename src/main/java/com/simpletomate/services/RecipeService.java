@@ -30,7 +30,7 @@ public class RecipeService {
         if(optionalRecipe.isPresent()){
             return optionalRecipe.get();
         }
-        log.info("Employee with id: {} doesn't exist", id);
+        log.info("Recipe with id: {} doesn't exist", id);
         return null;
     }
 
@@ -39,7 +39,7 @@ public class RecipeService {
         recipe.setUpdatedAt(LocalDateTime.now());
         Recipe savedRecipe = recipeRepo.save(recipe);
 
-        log.info("Employee with id: {} saved successfully", recipe.getId());
+        log.info("Recipe with id: {} saved successfully", recipe.getId());
         return savedRecipe;
     }
 
@@ -50,7 +50,7 @@ public class RecipeService {
 
         Recipe updatedRecipe = recipeRepo.save(recipe);
 
-        log.info("Employee with id: {} updated successfully", recipe.getId());
+        log.info("Recipe with id: {} updated successfully", recipe.getId());
         return updatedRecipe;
     }
 
