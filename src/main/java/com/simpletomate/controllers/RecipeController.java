@@ -24,8 +24,8 @@ public class RecipeController {
     /**
      * This method is called when a GET request is made
      * URL: localhost:8080/employee/v1/
-     * Purpose: Fetches all the employees in the employee table
-     * @return List of Employees
+     * Purpose: Fetches all the recipes in the recipe table
+     * @return List of Recipes
      */
     @GetMapping("/")
     public ResponseEntity<List<Recipe>> getAllRecipes(){
@@ -34,10 +34,10 @@ public class RecipeController {
 
     /**
      * This method is called when a GET request is made
-     * URL: localhost:8080/employee/v1/1 (or any other id)
-     * Purpose: Fetches employee with the given id
-     * @param id - employee id
-     * @return Employee with the given id
+     * URL: localhost:8080/recipe/v1/1 (or any other id)
+     * Purpose: Fetches recipe with the given id
+     * @param id - recipe id
+     * @return Recipe with the given id
      */
     @GetMapping("/{id}")
     public ResponseEntity<Recipe> getRecipeById(@PathVariable Integer id)
@@ -47,10 +47,10 @@ public class RecipeController {
 
     /**
      * This method is called when a POST request is made
-     * URL: localhost:8080/employee/v1/
-     * Purpose: Save an Employee entity
-     * @param recipe - Request body is an Employee entity
-     * @return Saved Employee entity
+     * URL: localhost:8080/recipe/v1/
+     * Purpose: Save an Recipe entity
+     * @param recipe - Request body is an Recipe entity
+     * @return Saved Recipe entity
      */
     @PostMapping("/")
     public ResponseEntity<Recipe> saveRecipe(@RequestBody Recipe recipe)
@@ -60,10 +60,10 @@ public class RecipeController {
 
     /**
      * This method is called when a PUT request is made
-     * URL: localhost:8080/employee/v1/
-     * Purpose: Update an Employee entity
-     * @param recipe - Employee entity to be updated
-     * @return Updated Employee
+     * URL: localhost:8080/recipe/v1/
+     * Purpose: Update an Recipe entity
+     * @param recipe - Recipe entity to be updated
+     * @return Updated Recipe
      */
     @PutMapping("/")
     public ResponseEntity<Recipe> updateRecipe(@RequestBody Recipe recipe)
@@ -73,10 +73,10 @@ public class RecipeController {
 
     /**
      * This method is called when a PUT request is made
-     * URL: localhost:8080/employee/v1/1 (or any other id)
-     * Purpose: Delete an Employee entity
-     * @param id - employee's id to be deleted
-     * @return a String message indicating employee record has been deleted successfully
+     * URL: localhost:8080/recipe/v1/1 (or any other id)
+     * Purpose: Delete an Recipe entity
+     * @param id - recipe's id to be deleted
+     * @return a String message indicating recipe record has been deleted successfully
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteRecipeById(@PathVariable Integer id)
