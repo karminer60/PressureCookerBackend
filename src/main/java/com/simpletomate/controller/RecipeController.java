@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api")
 public class RecipeController {
@@ -39,10 +39,6 @@ public class RecipeController {
                 recipeRepo.findAll().forEach(recipes::add);
             else
                 recipeRepo.findByTitleContaining(title).forEach(recipes::add);
-
-            if (recipes.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
 
             return new ResponseEntity<>(recipes, HttpStatus.OK);
         } catch (Exception e) {
