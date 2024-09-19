@@ -47,7 +47,7 @@ public class RecipeController {
     }
 
     @GetMapping("/recipes/{id}")
-    public ResponseEntity<Recipe> getTutorialById(@PathVariable("id") long id) {
+    public ResponseEntity<Recipe> getRecipeById(@PathVariable("id") long id) {
         Optional<Recipe> recipeData = recipeRepo.findById((int) id);
 
         if (recipeData.isPresent()) {
@@ -58,7 +58,7 @@ public class RecipeController {
     }
 
     @PostMapping("/recipes")
-    public ResponseEntity<Recipe> createTutorial(@RequestBody Recipe recipe) {
+    public ResponseEntity<Recipe> createRecipe(@RequestBody Recipe recipe) {
         try {
             Recipe _recipe = recipeRepo
                     .save(new Recipe(recipe.getTitle(), recipe.getDescription(), false));
@@ -69,7 +69,7 @@ public class RecipeController {
     }
 
     @PutMapping("/recipes/{id}")
-    public ResponseEntity<Recipe> updateTutorial(@PathVariable("id") long id, @RequestBody Recipe recipe) {
+    public ResponseEntity<Recipe> updateRecipe(@PathVariable("id") long id, @RequestBody Recipe recipe) {
         Optional<Recipe> recipeData = recipeRepo.findById((int) id);
 
         if (recipeData.isPresent()) {
