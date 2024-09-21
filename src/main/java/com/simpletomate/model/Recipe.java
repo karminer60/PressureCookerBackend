@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuppressWarnings("ALL")
 @Entity
 @Table(name = "recipes")
 public class Recipe {

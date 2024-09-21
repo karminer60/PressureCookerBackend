@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
 public class Category {
    @ManyToMany(mappedBy ="categories")
     private Set<Recipe> recipes = new HashSet<Recipe>();
