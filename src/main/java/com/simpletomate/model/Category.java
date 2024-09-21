@@ -5,15 +5,9 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-@Table(name = "recipes")
-public class Recipe {
-    @ManyToMany
-    @JoinTable(name = "recipe_category",
-            joinColumns = {@JoinColumn(name = "fk_recipe")},
-            inverseJoinColumns = {@JoinColumn(name = "fk_category")})
-    private Set<Category> categories = new HashSet<Category>();
-
+public class Category {
+   @ManyToMany(mappedBy ="categories")
+    private Set<Recipe> recipes = new HashSet<Recipe>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,11 +22,11 @@ public class Recipe {
     @Column(name = "published")
     private boolean published;
 
-    public Recipe() {
+    public Category() {
 
     }
 
-    public Recipe(String title, String description, boolean published) {
+    public Category(String title, String description, boolean published) {
         this.title = title;
         this.description = description;
         this.published = published;
@@ -68,7 +62,7 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return "Recipe [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
+        return "Category [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
     }
 
 }
