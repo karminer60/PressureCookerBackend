@@ -29,6 +29,10 @@ public class Recipe {
     @Column(name = "published")
     private boolean published;
 
+    @Column(name = "fk_category")
+    private String fk_category;
+
+
     public Recipe() {
 
     }
