@@ -17,9 +17,6 @@ public class Category {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "fk_recipe")
-    private String fk_recipe;
-
 
     public Category() {
 
