@@ -15,6 +15,20 @@ public class Recipe {
             inverseJoinColumns = {@JoinColumn(name = "fk_category")})
     private Set<Category> categories = new HashSet<Category>();
 
+    public Set<Category> getCategories(){
+        return this.categories;
+
+    }
+
+    public void addCategory(Category c) {
+        this.categories.add(c);
+        c.getRecipes().add(this);
+    }
+
+    public void removeCategory(Category c) {
+        this.categories.remove(c);
+        c.getRecipes().remove(this);
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

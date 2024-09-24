@@ -7,7 +7,23 @@ import java.util.Set;
 
 @Entity
 public class Category {
-   @ManyToMany(mappedBy ="categories")
+
+    public Set<Recipe> getRecipes(){
+        return this.recipes;
+
+    }
+
+    public void addRecipe(Recipe r) {
+        this.recipes.add(r);
+        r.getCategories().add(this);
+    }
+
+    public void removeRecipe(Recipe r) {
+        this.recipes.remove(r);
+        r.getCategories().remove(this);
+    }
+
+    @ManyToMany(mappedBy ="categories")
     private Set<Recipe> recipes = new HashSet<Recipe>();
 
     @Id
