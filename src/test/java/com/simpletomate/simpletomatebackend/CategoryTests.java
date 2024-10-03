@@ -28,11 +28,11 @@ class CategoryTests {
 
 		final Category newCategory= new Category("Grains");
 
-		final ResponseEntity<String> response = template.postForEntity(String.format("http://localhost:%d/api/customers", port), newCategory, String.class);
+		final ResponseEntity<String> response = template.postForEntity(String.format("http://localhost:8080/api/categories", port), newCategory, String.class);
 
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 		assertThat(response.getBody()).isNull();
-		assertThat(response.getHeaders().getLocation().toString()).isEqualTo(String.format("http://localhost:%d/api/customers/0", port));
+		assertThat(response.getHeaders().getLocation().toString()).isEqualTo(String.format("http://localhost:8080/api/categories/0", port));
 	}
 
 }

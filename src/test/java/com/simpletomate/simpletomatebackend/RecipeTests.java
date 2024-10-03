@@ -28,11 +28,11 @@ class RecipeTests {
 
         final Recipe newRecipe = new Recipe("Frijoles de la olla", "Here is where it goes.", true);
 
-        final ResponseEntity<String> response = template.postForEntity(String.format("http://localhost:%d/api/customers", port), newRecipe, String.class);
+        final ResponseEntity<String> response = template.postForEntity(String.format("http://localhost:8080/api/recipes", port), newRecipe, String.class);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
         assertThat(response.getBody()).isNull();
-        assertThat(response.getHeaders().getLocation().toString()).isEqualTo(String.format("http://localhost:%d/api/customers/0", port));
+        assertThat(response.getHeaders().getLocation().toString()).isEqualTo(String.format("http://localhost:8080/api/recipes/0", port));
     }
 
 }
