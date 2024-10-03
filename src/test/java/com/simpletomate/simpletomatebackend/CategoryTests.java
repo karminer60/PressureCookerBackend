@@ -24,7 +24,7 @@ class CategoryTests {
 	}
 
 	@Test
-	public void shouldReturn201ResponseIncludingLocationHeaderAndCreateRecipeInOurDatabase() {
+	public void shouldReturn201ResponseIncludingLocationHeaderAndCreateCategoryInOurDatabase() {
 
 		final Category newCategory= new Category("Rowan Atkinson");
 
