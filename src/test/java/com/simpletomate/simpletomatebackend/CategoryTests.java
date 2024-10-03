@@ -26,7 +26,7 @@ class CategoryTests {
 	@Test
 	public void shouldReturn201ResponseIncludingLocationHeaderAndCreateCategoryInOurDatabase() {
 
-		final Category newCategory= new Category("Rowan Atkinson");
+		final Category newCategory= new Category("Grains");
 
 		final ResponseEntity<String> response = template.postForEntity(String.format("http://localhost:%d/api/customers", port), newCategory, String.class);
 

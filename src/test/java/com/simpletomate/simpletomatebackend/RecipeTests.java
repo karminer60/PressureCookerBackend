@@ -26,7 +26,7 @@ class RecipeTests {
     @Test
     public void shouldReturn201ResponseIncludingLocationHeaderAndCreateRecipeInOurDatabase() {
 
-        final Recipe newRecipe = new Recipe(null, "Rowan Atkinson", true);
+        final Recipe newRecipe = new Recipe("Frijoles de la olla", "Here is where it goes.", true);
 
         final ResponseEntity<String> response = template.postForEntity(String.format("http://localhost:%d/api/customers", port), newRecipe, String.class);
 
