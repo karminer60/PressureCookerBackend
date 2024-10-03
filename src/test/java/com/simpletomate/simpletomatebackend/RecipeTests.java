@@ -1,4 +1,3 @@
-
 package com.simpletomate.simpletomatebackend;
 
 import com.simpletomate.model.Recipe;
@@ -24,8 +23,7 @@ class RecipeTests {
     void contextLoads() {
     }
 
-
-
+    @Test
     public void shouldReturn201ResponseIncludingLocationHeaderAndCreateRecipeInOurDatabase() {
 
         final Recipe newRecipe = new Recipe(null, "Rowan Atkinson", true);
